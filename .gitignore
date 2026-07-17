@@ -6,3 +6,10 @@ test-results/
 .coverage
 playwright-report/
 blob-report/
+
+# Developer/Agent documentation
+PUBLISHING.md
+HANDOFF.md
+GEMINI_STREAMING_DOM_INSPECTION.md
+GEMINI_STREAMING_DOM_INSPECTION_RESULTS.md
+
