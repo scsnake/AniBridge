@@ -1,6 +1,9 @@
 node_modules/
 .DS_Store
 __pycache__/
+*.zip
+screenshot*.png
+store-assets/
 test-results/
 .pytest_cache/
 .coverage
@@ -13,4 +16,5 @@ HANDOFF.md
 GEMINI_STREAMING_DOM_INSPECTION.md
 GEMINI_STREAMING_DOM_INSPECTION_RESULTS.md
 STORE_LISTING_COPY.md
+CHROMEWEBSTORE.md
 
