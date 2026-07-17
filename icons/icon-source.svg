@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">AniBridge extension icon</title>
+  <desc id="desc">Two multilingual title cards connected by a bridge.</desc>
+  <rect x="32" y="32" width="960" height="960" rx="224" fill="#075B65"/>
+  <rect x="342" y="420" width="52" height="178" rx="26" fill="#FF806B"/>
+  <rect x="342" y="540" width="340" height="52" rx="26" fill="#FF806B"/>
+  <rect x="630" y="540" width="52" height="80" rx="26" fill="#FF806B"/>
+  <g>
+    <rect x="142" y="150" width="594" height="300" rx="80" fill="#FFFDF8"/>
+    <circle cx="250" cy="245" r="32" fill="#FF806B"/>
+    <rect x="314" y="218" width="310" height="54" rx="27" fill="#075B65"/>
+    <circle cx="250" cy="355" r="32" fill="#F7C95C"/>
+    <rect x="314" y="328" width="218" height="54" rx="27" fill="#6A7B80"/>
+  </g>
+  <g>
+    <rect x="288" y="574" width="594" height="300" rx="80" fill="#FFFDF8"/>
+    <circle cx="396" cy="669" r="32" fill="#4BC6C2"/>
+    <rect x="460" y="642" width="310" height="54" rx="27" fill="#075B65"/>
+    <circle cx="396" cy="779" r="32" fill="#FF806B"/>
+    <rect x="460" y="752" width="218" height="54" rx="27" fill="#6A7B80"/>
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "AniBridge 動畫資料庫橋接器",
+  "version": "0.9.1",
+  "description": "從動畫瘋、Disney+、Netflix、Hami Video 連到常用動畫收藏與評分網站，並補上可複製的多語標題。",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://api.bgm.tv/*",
+    "https://graphql.anilist.co/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": false
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "AniBridge",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://ani.gamer.com.tw/animeVideo.php*"],
+      "js": ["lib/platforms.js", "lib/ui.js", "content-gamer.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://myanimelist.net/anime/*",
+        "https://anilist.co/anime/*"
+      ],
+      "js": ["lib/platforms.js", "lib/ui.js", "content-database.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.disneyplus.com/*",
+        "https://www.netflix.com/*",
+        "https://hamivideo.hinet.net/product/*"
+      ],
+      "js": ["lib/platforms.js", "lib/streaming-adapters.js", "lib/local-ai.js", "lib/ui.js", "content-streaming.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

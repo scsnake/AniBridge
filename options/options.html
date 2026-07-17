@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AniBridge 顯示平台設定</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <img src="../icons/icon-128.png" width="72" height="72" alt="">
+        <div>
+          <p class="eyebrow">AniBridge</p>
+          <h1>選擇要顯示的平台</h1>
+          <p>點選平台項目可切換是否顯示；點 ↗ 可在新分頁開啟平台首頁。未能確認作品 ID 的平台會開啟搜尋結果。</p>
+        </div>
+      </header>
+
+      <section class="section" aria-labelledby="tracking-title">
+        <div class="section-head">
+          <div>
+            <h2 id="tracking-title">收藏與追蹤</h2>
+            <p>適合管理想看、觀看中、已完成及每集進度。</p>
+          </div>
+          <button class="quiet" type="button" data-toggle="tracking">全選／清除</button>
+        </div>
+        <div id="tracking-platforms" class="platforms"></div>
+      </section>
+
+      <section class="section" aria-labelledby="ratings-title">
+        <div class="section-head">
+          <div>
+            <h2 id="ratings-title">評分與排行建議</h2>
+            <p>日本語平台可補充不同使用者族群的評分、感想與排行觀點。</p>
+          </div>
+          <button class="quiet" type="button" data-toggle="ratings">全選／清除</button>
+        </div>
+        <div id="ratings-platforms" class="platforms"></div>
+      </section>
+
+      <section class="section" aria-labelledby="streaming-title">
+        <div class="section-head">
+          <div>
+            <h2 id="streaming-title">串流平台搜尋</h2>
+            <p>只在 MyAnimeList 與 AniList 的資訊卡顯示。連結會開啟平台搜尋，實際上架狀態仍取決於帳號與地區。</p>
+          </div>
+          <button class="quiet" type="button" data-toggle-streaming>全選／清除</button>
+        </div>
+        <div id="streaming-platforms" class="platforms"></div>
+      </section>
+
+      <footer class="actions">
+        <span id="status" role="status" aria-live="polite"></span>
+        <button id="restore" class="secondary" type="button">恢復預設</button>
+        <button id="save" class="primary" type="button">儲存設定</button>
+      </footer>
+    </main>
+    <script src="../lib/platforms.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
