@@ -2,6 +2,7 @@
   "use strict";
 
   const { renderAnime, renderError, renderLoading } = AniBridgeUi;
+  const t = (AniBridgeI18n || { t: (key) => key }).t;
   const metadata = extractMetadata();
   let currentData = null;
   if (!metadata.title) return;
@@ -16,10 +17,10 @@
   });
 
   async function runMatch(payload) {
-    renderLoading("正在比對動畫資料庫", { collapsible: true });
+    renderLoading(t("loadingMatchingDatabase"), { collapsible: true });
     try {
       const response = await chrome.runtime.sendMessage({ type: "matchAnime", payload });
-      if (!response?.ok) throw new Error(response?.error || "未知錯誤");
+      if (!response?.ok) throw new Error(response?.error || t("unknownError"));
       currentData = response.data;
       await showData(currentData);
     } catch (error) {

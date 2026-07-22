@@ -2,6 +2,7 @@
   "use strict";
 
   const { renderAnime, renderError, renderLoading } = AniBridgeUi;
+  const t = (AniBridgeI18n || { t: (key) => key }).t;
   let currentKey = "";
   let currentData = null;
   let currentPayload = null;
@@ -39,11 +40,11 @@
   }
 
   async function runMatch(payload, requestKey) {
-    renderLoading("正在比對動畫資料庫", { collapsible: true });
+    renderLoading(t("loadingMatchingDatabase"), { collapsible: true });
     try {
       const response = await chrome.runtime.sendMessage({ type: "matchAnime", payload });
       if (requestKey !== currentKey) return;
-      if (!response?.ok) throw new Error(response?.error || "未知錯誤");
+      if (!response?.ok) throw new Error(response?.error || t("unknownError"));
       currentData = response.data;
       await showData(currentData, requestKey);
     } catch (error) {
@@ -79,7 +80,7 @@
     const previousData = currentData;
     if (!payload?.title) return;
 
-    renderLoading("正在由本機 AI 建議別名", { collapsible: true });
+    renderLoading(t("loadingAiAlias"), { collapsible: true });
     try {
       const aliases = await AniBridgeLocalAi.suggestAliases(payload);
       const data = await AniBridgeLocalAi.verifyAliases(aliases, payload, (candidate) =>
@@ -94,7 +95,7 @@
       if (previousData) {
         currentData = {
           ...previousData,
-          warnings: [...(previousData.warnings || []), `本機 AI 無法協助：${message}`]
+          warnings: [...(previousData.warnings || []), t("warningLocalAiFailed", [message])]
         };
         await showData(currentData, requestKey);
       } else {

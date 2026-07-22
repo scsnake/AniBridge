@@ -8,6 +8,13 @@ const {
   yearFromDate
 } = AniBridgeMatcher;
 
+function t(key, substitutions) {
+  const value = substitutions === undefined
+    ? chrome.i18n.getMessage(key)
+    : chrome.i18n.getMessage(key, substitutions);
+  return value || key;
+}
+
 const CACHE_VERSION = 8;
 const CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 const MIN_USABLE_SCORE = 0.46;
@@ -38,7 +45,7 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
 async function matchAnime(payload, options = {}) {
   const title = cleanSourceTitle(payload.title);
   const year = Number(payload.year) || null;
-  if (!title) throw new Error("找不到動畫標題");
+  if (!title) throw new Error(t("errorNoAnimeTitle"));
 
   const cacheKey = `match:${normalizeTitle(title)}:${year || "unknown"}`;
   if (!options.skipCache) {
@@ -50,7 +57,7 @@ async function matchAnime(payload, options = {}) {
   const bangumiCandidates = await safely(
     () => searchBangumi(title),
     warnings,
-    "Bangumi 暫時無法查詢"
+    t("warningBangumiUnavailable")
   );
   const rankedBangumi = rankCandidates(
     { title, year },
@@ -67,7 +74,7 @@ async function matchAnime(payload, options = {}) {
   const anilistCandidates = await safely(
     () => searchAniList(bridgeTitle),
     warnings,
-    "AniList 暫時無法查詢"
+    t("warningAnilistUnavailable")
   );
   const rankedAniList = rankCandidates(
     { title: bridgeTitle, year },
@@ -101,7 +108,7 @@ async function matchAnime(payload, options = {}) {
 async function lookupAnime(payload) {
   const site = String(payload.site || "");
   const id = Number(payload.id);
-  if (!id || !["mal", "anilist"].includes(site)) throw new Error("無效的資料庫作品 ID");
+  if (!id || !["mal", "anilist"].includes(site)) throw new Error(t("errorInvalidDatabaseId"));
 
   const externalKey = `external:${site}:${id}`;
   const cached = await readCache(externalKey);
@@ -111,16 +118,16 @@ async function lookupAnime(payload) {
   const anime = await safely(
     () => getAniListMedia(site, id),
     warnings,
-    "AniList 暫時無法查詢"
+    t("warningAnilistUnavailable")
   );
-  if (!anime) throw new Error("找不到這部動畫的跨站資料");
+  if (!anime) throw new Error(t("errorNoCrossSiteData"));
 
   const year = anime.startDate?.year || anime.seasonYear || null;
   const japanese = anime.title?.native || anime.title?.romaji;
   const bangumiCandidates = await safely(
     () => searchBangumi(japanese),
     warnings,
-    "Bangumi 暫時無法查詢"
+    t("warningBangumiUnavailable")
   );
   const ranked = rankCandidates(
     { title: japanese, year },
@@ -182,19 +189,19 @@ function buildResult({
     streamingLinks: [
       searchLink(
         "animegamer",
-        "巴哈姆特動畫瘋",
+        AniBridgePlatforms.labelFor("animegamer"),
         `https://ani.gamer.com.tw/search.php?keyword=${encodeURIComponent(streamingSearchTitle)}`,
         "streaming"
       ),
       searchLink(
         "netflix",
-        "Netflix",
+        AniBridgePlatforms.labelFor("netflix"),
         `https://www.netflix.com/search?q=${encodeURIComponent(streamingSearchTitle)}`,
         "streaming"
       ),
       searchLink(
         "hamivideo",
-        "Hami Video",
+        AniBridgePlatforms.labelFor("hamivideo"),
         `https://hamivideo.hinet.net/search.do?keyword=${encodeURIComponent(streamingSearchTitle)}`,
         "streaming"
       )
@@ -202,40 +209,40 @@ function buildResult({
     links: [
       makeLink(
         "mal",
-        "MyAnimeList",
+        AniBridgePlatforms.labelFor("mal"),
         anilist?.idMal ? `https://myanimelist.net/anime/${anilist.idMal}` : null,
         `https://myanimelist.net/anime.php?q=${encodeURIComponent(anilist?.title?.romaji || sourceTitle)}&cat=anime`,
         Boolean(anilist?.idMal && anilistMatch?.score >= 0.55)
       ),
       makeLink(
         "anilist",
-        "AniList",
+        AniBridgePlatforms.labelFor("anilist"),
         anilist?.siteUrl || (anilist?.id ? `https://anilist.co/anime/${anilist.id}` : null),
         `https://anilist.co/search/anime?search=${encodeURIComponent(sourceTitle)}`,
         Boolean(anilist?.id && anilistMatch?.score >= 0.55)
       ),
       makeLink(
         "bangumi",
-        "Bangumi",
+        AniBridgePlatforms.labelFor("bangumi"),
         bangumi?.id ? `https://bgm.tv/subject/${bangumi.id}` : null,
         `https://bgm.tv/subject_search/${encodeURIComponent(sourceTitle)}?cat=2`,
         Boolean(bangumi?.id && bangumiMatch?.score >= 0.55)
       ),
       makeLink(
         "kitsu",
-        "Kitsu",
+        AniBridgePlatforms.labelFor("kitsu"),
         null,
         `https://kitsu.app/anime?text=${encodeURIComponent(sourceTitle)}`,
         false
       ),
-      searchLink("animeplanet", "Anime-Planet", `https://www.anime-planet.com/anime/all?name=${encodeURIComponent(globalSearchTitle)}`),
-      searchLink("anidb", "AniDB", `https://anidb.net/search/anime/?adb.search=${encodeURIComponent(globalSearchTitle)}&do.search=1`),
-      searchLink("annict", "Annict", `https://annict.com/search?q=${encodeURIComponent(japaneseSearchTitle)}`),
-      searchLink("simkl", "Simkl", `https://simkl.com/search/?q=${encodeURIComponent(globalSearchTitle)}`),
-      searchLink("livechart", "LiveChart", `https://www.livechart.me/search?q=${encodeURIComponent(globalSearchTitle)}`),
-      searchLink("filmarks", "Filmarks Anime", `https://filmarks.com/search/animes?q=${encodeURIComponent(japaneseSearchTitle)}`, "ratings"),
-      searchLink("anikore", "あにこれ", `https://www.anikore.jp/anime_title/${encodeURIComponent(japaneseSearchTitle)}/`, "ratings"),
-      searchLink("imdb", "IMDb", `https://www.imdb.com/find/?q=${encodeURIComponent(globalSearchTitle)}&s=tt`, "ratings")
+      searchLink("animeplanet", AniBridgePlatforms.labelFor("animeplanet"), `https://www.anime-planet.com/anime/all?name=${encodeURIComponent(globalSearchTitle)}`),
+      searchLink("anidb", AniBridgePlatforms.labelFor("anidb"), `https://anidb.net/search/anime/?adb.search=${encodeURIComponent(globalSearchTitle)}&do.search=1`),
+      searchLink("annict", AniBridgePlatforms.labelFor("annict"), `https://annict.com/search?q=${encodeURIComponent(japaneseSearchTitle)}`),
+      searchLink("simkl", AniBridgePlatforms.labelFor("simkl"), `https://simkl.com/search/?q=${encodeURIComponent(globalSearchTitle)}`),
+      searchLink("livechart", AniBridgePlatforms.labelFor("livechart"), `https://www.livechart.me/search?q=${encodeURIComponent(globalSearchTitle)}`),
+      searchLink("filmarks", AniBridgePlatforms.labelFor("filmarks"), `https://filmarks.com/search/animes?q=${encodeURIComponent(japaneseSearchTitle)}`, "ratings"),
+      searchLink("anikore", t("platformAnikoreShortLabel"), `https://www.anikore.jp/anime_title/${encodeURIComponent(japaneseSearchTitle)}/`, "ratings"),
+      searchLink("imdb", AniBridgePlatforms.labelFor("imdb"), `https://www.imdb.com/find/?q=${encodeURIComponent(globalSearchTitle)}&s=tt`, "ratings")
     ],
     ids: {
       mal: anilist?.idMal || null,
@@ -262,21 +269,27 @@ function buildRatings({ bangumi, bangumiMatch, anilist, anilistMatch }) {
     const rank = preferredAniListRank(anilist.rankings);
     ratings.push({
       platformId: "anilist",
-      label: "AniList",
+      label: AniBridgePlatforms.labelFor("anilist"),
       score: anilist.averageScore,
       scale: 100,
-      detail: Number.isFinite(anilist.popularity) ? `加入清單 ${anilist.popularity.toLocaleString("en-US")} 人` : null,
-      rank: rank ? `#${rank.rank.toLocaleString("en-US")}${rank.allTime ? " 歷年" : ""}` : null,
+      detail: Number.isFinite(anilist.popularity)
+        ? t("ratingAnilistDetail", [anilist.popularity.toLocaleString("en-US")])
+        : null,
+      rank: rank
+        ? `#${rank.rank.toLocaleString("en-US")}${rank.allTime ? t("ratingRankAllTime") : ""}`
+        : null,
       url: anilist.siteUrl || `https://anilist.co/anime/${anilist.id}`
     });
   }
   if (isExactMatch(bangumiMatch) && Number.isFinite(bangumi?.rating?.score) && bangumi.rating.score > 0) {
     ratings.push({
       platformId: "bangumi",
-      label: "Bangumi",
+      label: AniBridgePlatforms.labelFor("bangumi"),
       score: bangumi.rating.score,
       scale: 10,
-      detail: Number.isFinite(bangumi.rating.total) ? `${bangumi.rating.total.toLocaleString("en-US")} 則評分` : null,
+      detail: Number.isFinite(bangumi.rating.total)
+        ? t("ratingBangumiDetail", [bangumi.rating.total.toLocaleString("en-US")])
+        : null,
       rank: Number.isFinite(bangumi.rating.rank) && bangumi.rating.rank > 0
         ? `#${bangumi.rating.rank.toLocaleString("en-US")}`
         : null,
@@ -371,7 +384,7 @@ function findOfficialWebsite(externalLinks) {
   );
   if (!link) return null;
   return {
-    label: link.language ? `官方網站 · ${link.language}` : "官方網站",
+    label: link.language ? t("officialWebsiteWithLang", [link.language]) : t("officialWebsite"),
     url: link.url
   };
 }
@@ -399,7 +412,7 @@ async function safely(operation, warnings, warning) {
   try {
     return await operation();
   } catch (error) {
-    warnings.push(`${warning}：${error instanceof Error ? error.message : String(error)}`);
+    warnings.push(t("warningWithReason", [warning, error instanceof Error ? error.message : String(error)]));
     return [];
   }
 }

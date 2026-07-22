@@ -1,0 +1,183 @@
+{
+  "appName": {
+    "message": "AniBridge — Anime Database Bridge",
+    "description": "Extension name displayed in Chrome Web Store and browser."
+  },
+  "appShortName": {
+    "message": "AniBridge",
+    "description": "Short brand name used in in-page panels."
+  },
+  "appDescription": {
+    "message": "Links Ani-Gamer, Disney+, Netflix, and Hami Video pages to popular anime tracking and rating sites, and shows copyable multilingual titles.",
+    "description": "Chrome Web Store listing description."
+  },
+  "actionTitle": {
+    "message": "AniBridge",
+    "description": "Toolbar action tooltip."
+  },
+
+  "optionsPageTitle": { "message": "AniBridge — Platform Display Settings" },
+  "optionsHeading": { "message": "Choose the platforms to show" },
+  "optionsIntro": { "message": "Toggle any platform on or off; click ↗ to open its homepage in a new tab. Platforms without a confirmed title ID will open a search result." },
+  "sectionTrackingTitle": { "message": "Tracking & Collection" },
+  "sectionTrackingIntro": { "message": "For managing plan-to-watch, watching, completed, and episode progress." },
+  "sectionRatingsTitle": { "message": "Ratings & Rankings" },
+  "sectionRatingsIntro": { "message": "Japanese-language platforms add ratings, reviews, and rankings from a different audience." },
+  "sectionStreamingTitle": { "message": "Streaming search" },
+  "sectionStreamingIntro": { "message": "Shown only on MyAnimeList and AniList detail pages. Links open a search on the streaming site; availability still depends on your account and region." },
+  "toggleAll": { "message": "Select all / clear" },
+  "restoreDefaults": { "message": "Restore defaults" },
+  "saveSettings": { "message": "Save settings" },
+  "restoredMessage": { "message": "Defaults restored — click Save to apply." },
+  "savedMessage": { "message": "Settings saved." },
+  "openInNewTab": {
+    "message": "Open $PLATFORM$ in a new tab",
+    "placeholders": {
+      "platform": { "content": "$1", "example": "MyAnimeList" }
+    }
+  },
+
+  "confidenceHigh": { "message": "High confidence" },
+  "confidenceMedium": { "message": "Please verify" },
+  "confidenceLow": { "message": "May be imprecise" },
+
+  "drawerExpand": { "message": "Expand AniBridge" },
+  "drawerCollapse": { "message": "Collapse AniBridge" },
+  "panelClose": { "message": "Close AniBridge" },
+  "loadingCrossSite": { "message": "Matching against cross-site data" },
+  "loadingMatchingDatabase": { "message": "Matching against anime databases" },
+  "loadingFetchingTitles": { "message": "Fetching Traditional Chinese and Japanese titles" },
+  "loadingAiAlias": { "message": "Asking on-device AI for alias suggestions" },
+  "queryIncomplete": { "message": "Query incomplete" },
+  "queryFailed": { "message": "Could not fetch cross-site data" },
+  "retryHint": { "message": "Please refresh the page and try again." },
+  "unknownError": { "message": "Unknown error" },
+  "panelMultiTitle": { "message": "Multilingual titles" },
+  "panelDatabaseLinks": { "message": "Anime database links" },
+  "unknownWork": { "message": "Unknown title" },
+  "labelZhTw": { "message": "zh-TW" },
+  "labelJapanese": { "message": "日本語" },
+  "labelEnglish": { "message": "English" },
+  "labelRomaji": { "message": "Romaji" },
+  "officialWebsite": { "message": "Official website" },
+  "officialWebsiteWithLang": {
+    "message": "Official website · $LANG$",
+    "placeholders": {
+      "lang": { "content": "$1", "example": "Japanese" }
+    }
+  },
+  "officialInfoHeading": { "message": "Official info" },
+  "trackingHeading": { "message": "Tracking & collection" },
+  "streamingHeading": { "message": "Streaming search" },
+  "streamingNotice": { "message": "Search results only confirm current availability; actual streaming depends on account, region, and licensing." },
+  "openPlatformSettings": { "message": "Open platform settings" },
+  "tryLocalAi": { "message": "Try on-device AI for aliases" },
+  "localAiWorking": { "message": "On-device AI is matching…" },
+  "manualCorrect": { "message": "Not this one? Correct manually" },
+  "animeTitle": { "message": "Anime title" },
+  "firstAirYearPlaceholder": { "message": "Year" },
+  "firstAirYearAria": { "message": "First air year" },
+  "research": { "message": "Search" },
+  "seasonWarning": { "message": "Season splits, OVAs, and movies in the same franchise can have similar names — please double-check the year and format before adding to a list." },
+  "copyTitleTooltip": {
+    "message": "Copy $LABEL$ title",
+    "placeholders": {
+      "label": { "content": "$1", "example": "English" }
+    }
+  },
+  "copyTitleAria": {
+    "message": "Copy $LABEL$ title: $VALUE$",
+    "placeholders": {
+      "label": { "content": "$1", "example": "English" },
+      "value": { "content": "$2", "example": "Anime title" }
+    }
+  },
+  "copied": { "message": "Copied" },
+  "linkExact": { "message": "Work page ↗" },
+  "linkSearch": { "message": "Search ↗" },
+  "ratingsHeading": { "message": "Ratings & ranking" },
+
+  "errorNoAnimeTitle": { "message": "Could not find an anime title on this page" },
+  "errorInvalidDatabaseId": { "message": "Invalid database work ID" },
+  "errorNoCrossSiteData": { "message": "No cross-site data for this anime" },
+  "warningBangumiUnavailable": { "message": "Bangumi is temporarily unavailable" },
+  "warningAnilistUnavailable": { "message": "AniList is temporarily unavailable" },
+  "warningWithReason": {
+    "message": "$WARNING$: $REASON$",
+    "placeholders": {
+      "warning": { "content": "$1" },
+      "reason": { "content": "$2" }
+    }
+  },
+
+  "ratingAnilistDetail": {
+    "message": "$COUNT$ users listed",
+    "placeholders": {
+      "count": { "content": "$1", "example": "12,345" }
+    }
+  },
+  "ratingBangumiDetail": {
+    "message": "$COUNT$ ratings",
+    "placeholders": {
+      "count": { "content": "$1", "example": "12,345" }
+    }
+  },
+  "ratingRankAllTime": { "message": " all-time" },
+
+  "errorLocalAiUnavailable": { "message": "This Chrome build does not provide an on-device AI model" },
+  "errorLocalAiFormat": { "message": "The on-device AI did not return a verifiable alias format" },
+  "errorLocalAiNoAlias": { "message": "The on-device AI returned no usable aliases" },
+  "errorLocalAiNoMatch": { "message": "No AI-suggested alias matched any database entry" },
+  "warningLocalAiAlias": {
+    "message": "On-device AI suggested the alias \"$ALIAS$\" and it matched a database entry — please verify the title before adding to a list.",
+    "placeholders": {
+      "alias": { "content": "$1", "example": "some alias" }
+    }
+  },
+  "warningLocalAiFailed": {
+    "message": "On-device AI could not help: $REASON$",
+    "placeholders": {
+      "reason": { "content": "$1" }
+    }
+  },
+
+  "regionGlobalEnglish": { "message": "Global / English" },
+  "regionZhJp": { "message": "Chinese / Japanese titles" },
+  "regionGlobalMulti": { "message": "Global / Multilingual" },
+  "regionJapanese": { "message": "Japanese" },
+  "regionGlobalGeneral": { "message": "Global / General audience" },
+  "regionTaiwanZhTw": { "message": "Taiwan / Traditional Chinese" },
+  "regionGlobalTaiwan": { "message": "Global / Taiwan" },
+
+  "platformMalLabel": { "message": "MyAnimeList" },
+  "platformMalDescription": { "message": "Progress, ratings, reviews, and rankings" },
+  "platformAnilistLabel": { "message": "AniList" },
+  "platformAnilistDescription": { "message": "Progress, stats, ratings, and social features" },
+  "platformBangumiLabel": { "message": "Bangumi" },
+  "platformBangumiDescription": { "message": "Collection, tags, ratings, and Chinese metadata" },
+  "platformKitsuLabel": { "message": "Kitsu" },
+  "platformKitsuDescription": { "message": "Progress, ratings, and community activity" },
+  "platformAnimeplanetLabel": { "message": "Anime-Planet" },
+  "platformAnimeplanetDescription": { "message": "Collection, recommendations, reviews, and rankings" },
+  "platformAnidbLabel": { "message": "AniDB" },
+  "platformAnidbDescription": { "message": "Detailed release data, MyList, ratings, and reviews" },
+  "platformAnnictLabel": { "message": "Annict" },
+  "platformAnnictDescription": { "message": "Japanese anime watch progress and per-episode tracking" },
+  "platformSimklLabel": { "message": "Simkl" },
+  "platformSimklDescription": { "message": "Cross-media tracking for anime, shows, and movies" },
+  "platformLivechartLabel": { "message": "LiveChart" },
+  "platformLivechartDescription": { "message": "Seasonal chart, air-time reminders, watch status, and community ratings" },
+  "platformFilmarksLabel": { "message": "Filmarks Anime" },
+  "platformFilmarksDescription": { "message": "Japanese five-star ratings, reviews, and satisfaction rankings" },
+  "platformAnikoreLabel": { "message": "Anikore (あにこれ)" },
+  "platformAnikoreShortLabel": { "message": "Anikore" },
+  "platformAnikoreDescription": { "message": "Japanese anime reviews, trait scoring, and overall rankings" },
+  "platformImdbLabel": { "message": "IMDb" },
+  "platformImdbDescription": { "message": "Ratings and reviews from a general film & TV audience; season splits may differ from MAL" },
+  "platformAnimegamerLabel": { "message": "Ani-Gamer (巴哈姆特動畫瘋)" },
+  "platformAnimegamerDescription": { "message": "Search Ani-Gamer by title to check current availability" },
+  "platformNetflixLabel": { "message": "Netflix" },
+  "platformNetflixDescription": { "message": "Search Netflix by title; results depend on account and region" },
+  "platformHamivideoLabel": { "message": "Hami Video" },
+  "platformHamivideoDescription": { "message": "Search Hami Video by title to check current availability" }
+}

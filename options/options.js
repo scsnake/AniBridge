@@ -9,8 +9,10 @@
     platforms,
     streamingPlatforms
   } = AniBridgePlatforms;
+  const { t, applyDom } = AniBridgeI18n;
   const status = document.getElementById("status");
 
+  applyDom(document);
   render();
   restoreSaved();
 
@@ -18,7 +20,7 @@
   document.getElementById("restore").addEventListener("click", () => {
     setVisibility(defaultVisibility());
     setStreamingVisibility(defaultStreamingVisibility());
-    flash("已恢復預設，請儲存套用");
+    flash(t("restoredMessage"));
   });
   for (const button of document.querySelectorAll("[data-toggle]")) {
     button.addEventListener("click", () => toggleCategory(button.dataset.toggle));
@@ -61,8 +63,9 @@
     visit.href = platform.homepage;
     visit.target = "_blank";
     visit.rel = "noopener noreferrer";
-    visit.title = `在新分頁開啟 ${platform.label}`;
-    visit.setAttribute("aria-label", `在新分頁開啟 ${platform.label}`);
+    const openMessage = t("openInNewTab", [platform.label]);
+    visit.title = openMessage;
+    visit.setAttribute("aria-label", openMessage);
     visit.textContent = "↗";
     card.append(label, visit);
     return card;
@@ -100,7 +103,7 @@
     }
     await chrome.storage.sync.set({ platformVisibility: visibility, streamingVisibility });
     await chrome.storage.sync.remove("platformOpenInNewTab");
-    flash("設定已儲存");
+    flash(t("savedMessage"));
   }
 
   function toggleCategory(category) {

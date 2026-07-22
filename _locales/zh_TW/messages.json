@@ -1,0 +1,183 @@
+{
+  "appName": {
+    "message": "AniBridge 動畫資料庫橋接器",
+    "description": "Extension name displayed in Chrome Web Store and browser."
+  },
+  "appShortName": {
+    "message": "AniBridge",
+    "description": "Short brand name used in in-page panels."
+  },
+  "appDescription": {
+    "message": "從動畫瘋、Disney+、Netflix、Hami Video 連到常用動畫收藏與評分網站，並補上可複製的多語標題。",
+    "description": "Chrome Web Store listing description."
+  },
+  "actionTitle": {
+    "message": "AniBridge",
+    "description": "Toolbar action tooltip."
+  },
+
+  "optionsPageTitle": { "message": "AniBridge 顯示平台設定" },
+  "optionsHeading": { "message": "選擇要顯示的平台" },
+  "optionsIntro": { "message": "點選平台項目可切換是否顯示；點 ↗ 可在新分頁開啟平台首頁。未能確認作品 ID 的平台會開啟搜尋結果。" },
+  "sectionTrackingTitle": { "message": "收藏與追蹤" },
+  "sectionTrackingIntro": { "message": "適合管理想看、觀看中、已完成及每集進度。" },
+  "sectionRatingsTitle": { "message": "評分與排行建議" },
+  "sectionRatingsIntro": { "message": "日本語平台可補充不同使用者族群的評分、感想與排行觀點。" },
+  "sectionStreamingTitle": { "message": "串流平台搜尋" },
+  "sectionStreamingIntro": { "message": "只在 MyAnimeList 與 AniList 的資訊卡顯示。連結會開啟平台搜尋，實際上架狀態仍取決於帳號與地區。" },
+  "toggleAll": { "message": "全選／清除" },
+  "restoreDefaults": { "message": "恢復預設" },
+  "saveSettings": { "message": "儲存設定" },
+  "restoredMessage": { "message": "已恢復預設，請儲存套用" },
+  "savedMessage": { "message": "設定已儲存" },
+  "openInNewTab": {
+    "message": "在新分頁開啟 $PLATFORM$",
+    "placeholders": {
+      "platform": { "content": "$1", "example": "MyAnimeList" }
+    }
+  },
+
+  "confidenceHigh": { "message": "高可信" },
+  "confidenceMedium": { "message": "請確認" },
+  "confidenceLow": { "message": "可能不精確" },
+
+  "drawerExpand": { "message": "展開 AniBridge" },
+  "drawerCollapse": { "message": "收合 AniBridge" },
+  "panelClose": { "message": "關閉 AniBridge" },
+  "loadingCrossSite": { "message": "正在比對跨站資料" },
+  "loadingMatchingDatabase": { "message": "正在比對動畫資料庫" },
+  "loadingFetchingTitles": { "message": "正在取得繁中與日文標題" },
+  "loadingAiAlias": { "message": "正在由本機 AI 建議別名" },
+  "queryIncomplete": { "message": "查詢未完成" },
+  "queryFailed": { "message": "無法取得跨站資料" },
+  "retryHint": { "message": "請稍後重新整理頁面再試。" },
+  "unknownError": { "message": "未知錯誤" },
+  "panelMultiTitle": { "message": "多語標題" },
+  "panelDatabaseLinks": { "message": "動畫資料庫連結" },
+  "unknownWork": { "message": "未知作品" },
+  "labelZhTw": { "message": "繁中" },
+  "labelJapanese": { "message": "日本語" },
+  "labelEnglish": { "message": "English" },
+  "labelRomaji": { "message": "Romaji" },
+  "officialWebsite": { "message": "官方網站" },
+  "officialWebsiteWithLang": {
+    "message": "官方網站 · $LANG$",
+    "placeholders": {
+      "lang": { "content": "$1", "example": "Japanese" }
+    }
+  },
+  "officialInfoHeading": { "message": "作品官方資訊" },
+  "trackingHeading": { "message": "收藏與追蹤" },
+  "streamingHeading": { "message": "串流平台搜尋" },
+  "streamingNotice": { "message": "搜尋結果僅供確認目前上架狀態；實際內容受帳號、地區與授權期間影響。" },
+  "openPlatformSettings": { "message": "顯示平台設定" },
+  "tryLocalAi": { "message": "使用本機 AI 嘗試別名" },
+  "localAiWorking": { "message": "本機 AI 比對中…" },
+  "manualCorrect": { "message": "不是這部？手動修正" },
+  "animeTitle": { "message": "動畫標題" },
+  "firstAirYearPlaceholder": { "message": "首播年" },
+  "firstAirYearAria": { "message": "首播年份" },
+  "research": { "message": "重搜" },
+  "seasonWarning": { "message": "同系列的季度、OVA 與劇場版可能名稱相近，加入清單前請確認作品年份與類型。" },
+  "copyTitleTooltip": {
+    "message": "複製$LABEL$標題",
+    "placeholders": {
+      "label": { "content": "$1", "example": "繁中" }
+    }
+  },
+  "copyTitleAria": {
+    "message": "複製$LABEL$標題：$VALUE$",
+    "placeholders": {
+      "label": { "content": "$1", "example": "繁中" },
+      "value": { "content": "$2", "example": "作品名稱" }
+    }
+  },
+  "copied": { "message": "已複製" },
+  "linkExact": { "message": "作品頁 ↗" },
+  "linkSearch": { "message": "搜尋 ↗" },
+  "ratingsHeading": { "message": "評分與排行" },
+
+  "errorNoAnimeTitle": { "message": "找不到動畫標題" },
+  "errorInvalidDatabaseId": { "message": "無效的資料庫作品 ID" },
+  "errorNoCrossSiteData": { "message": "找不到這部動畫的跨站資料" },
+  "warningBangumiUnavailable": { "message": "Bangumi 暫時無法查詢" },
+  "warningAnilistUnavailable": { "message": "AniList 暫時無法查詢" },
+  "warningWithReason": {
+    "message": "$WARNING$：$REASON$",
+    "placeholders": {
+      "warning": { "content": "$1" },
+      "reason": { "content": "$2" }
+    }
+  },
+
+  "ratingAnilistDetail": {
+    "message": "加入清單 $COUNT$ 人",
+    "placeholders": {
+      "count": { "content": "$1", "example": "12,345" }
+    }
+  },
+  "ratingBangumiDetail": {
+    "message": "$COUNT$ 則評分",
+    "placeholders": {
+      "count": { "content": "$1", "example": "12,345" }
+    }
+  },
+  "ratingRankAllTime": { "message": " 歷年" },
+
+  "errorLocalAiUnavailable": { "message": "此 Chrome 裝置未提供本機 AI 模型" },
+  "errorLocalAiFormat": { "message": "本機 AI 沒有回傳可驗證的別名格式" },
+  "errorLocalAiNoAlias": { "message": "本機 AI 沒有提供可用的別名" },
+  "errorLocalAiNoMatch": { "message": "本機 AI 建議的別名沒有通過資料庫比對" },
+  "warningLocalAiAlias": {
+    "message": "本機 AI 建議別名「$ALIAS$」並通過資料庫比對；加入清單前請確認作品。",
+    "placeholders": {
+      "alias": { "content": "$1", "example": "某某別名" }
+    }
+  },
+  "warningLocalAiFailed": {
+    "message": "本機 AI 無法協助：$REASON$",
+    "placeholders": {
+      "reason": { "content": "$1" }
+    }
+  },
+
+  "regionGlobalEnglish": { "message": "Global / English" },
+  "regionZhJp": { "message": "中文 / 日本作品" },
+  "regionGlobalMulti": { "message": "Global / Multilingual" },
+  "regionJapanese": { "message": "日本語" },
+  "regionGlobalGeneral": { "message": "Global / General audience" },
+  "regionTaiwanZhTw": { "message": "台灣 / 繁體中文" },
+  "regionGlobalTaiwan": { "message": "Global / Taiwan" },
+
+  "platformMalLabel": { "message": "MyAnimeList" },
+  "platformMalDescription": { "message": "收藏進度、評分、評論與排行榜" },
+  "platformAnilistLabel": { "message": "AniList" },
+  "platformAnilistDescription": { "message": "收藏進度、統計、評分與社群功能" },
+  "platformBangumiLabel": { "message": "Bangumi" },
+  "platformBangumiDescription": { "message": "收藏、標籤、評分與中文作品資料" },
+  "platformKitsuLabel": { "message": "Kitsu" },
+  "platformKitsuDescription": { "message": "收藏進度、評分與社群動態" },
+  "platformAnimeplanetLabel": { "message": "Anime-Planet" },
+  "platformAnimeplanetDescription": { "message": "收藏、推薦、評論與作品排行" },
+  "platformAnidbLabel": { "message": "AniDB" },
+  "platformAnidbDescription": { "message": "詳細版本資料、MyList、評分與評論" },
+  "platformAnnictLabel": { "message": "Annict" },
+  "platformAnnictDescription": { "message": "日本動畫觀看進度與每集記錄" },
+  "platformSimklLabel": { "message": "Simkl" },
+  "platformSimklDescription": { "message": "動畫、影集與電影的跨媒體追蹤" },
+  "platformLivechartLabel": { "message": "LiveChart" },
+  "platformLivechartDescription": { "message": "季度表、播出提醒、觀看狀態與社群評分" },
+  "platformFilmarksLabel": { "message": "Filmarks Anime" },
+  "platformFilmarksDescription": { "message": "日本使用者的五星評分、感想與滿意度排行" },
+  "platformAnikoreLabel": { "message": "あにこれ (AniKore)" },
+  "platformAnikoreShortLabel": { "message": "あにこれ" },
+  "platformAnikoreDescription": { "message": "日本動畫評論、成分評價與綜合排行" },
+  "platformImdbLabel": { "message": "IMDb" },
+  "platformImdbDescription": { "message": "跨影視受眾的評分與評論；季度劃分可能與 MAL 不同" },
+  "platformAnimegamerLabel": { "message": "巴哈姆特動畫瘋" },
+  "platformAnimegamerDescription": { "message": "以作品標題開啟動畫瘋搜尋，確認目前是否上架" },
+  "platformNetflixLabel": { "message": "Netflix" },
+  "platformNetflixDescription": { "message": "以作品標題開啟 Netflix 搜尋；結果受帳號與地區影響" },
+  "platformHamivideoLabel": { "message": "Hami Video" },
+  "platformHamivideoDescription": { "message": "以作品標題開啟 Hami Video 搜尋，確認目前是否上架" }
+}

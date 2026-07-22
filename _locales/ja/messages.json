@@ -1,0 +1,183 @@
+{
+  "appName": {
+    "message": "AniBridge — アニメデータベース連携",
+    "description": "Extension name displayed in Chrome Web Store and browser."
+  },
+  "appShortName": {
+    "message": "AniBridge",
+    "description": "Short brand name used in in-page panels."
+  },
+  "appDescription": {
+    "message": "巴哈姆特動畫瘋・Disney+・Netflix・Hami Video のページから、主要なアニメ管理・レビューサイトへリンクし、コピー可能な多言語タイトルも表示します。",
+    "description": "Chrome Web Store listing description."
+  },
+  "actionTitle": {
+    "message": "AniBridge",
+    "description": "Toolbar action tooltip."
+  },
+
+  "optionsPageTitle": { "message": "AniBridge 表示プラットフォーム設定" },
+  "optionsHeading": { "message": "表示するプラットフォームを選択" },
+  "optionsIntro": { "message": "各項目をクリックすると表示のオン／オフを切り替えられます。↗ を押すと新しいタブでホームページを開きます。作品 ID が特定できない場合は検索結果が開きます。" },
+  "sectionTrackingTitle": { "message": "視聴管理" },
+  "sectionTrackingIntro": { "message": "見たい・視聴中・完了・エピソード進捗の管理に向いています。" },
+  "sectionRatingsTitle": { "message": "評価・ランキング" },
+  "sectionRatingsIntro": { "message": "日本語プラットフォームでは、異なる層による評価・感想・ランキングを確認できます。" },
+  "sectionStreamingTitle": { "message": "配信サービス検索" },
+  "sectionStreamingIntro": { "message": "MyAnimeList と AniList の作品ページにだけ表示されます。リンクは配信サービスの検索を開きますが、実際の配信状況はアカウントや地域によって異なります。" },
+  "toggleAll": { "message": "全選択／解除" },
+  "restoreDefaults": { "message": "既定値に戻す" },
+  "saveSettings": { "message": "設定を保存" },
+  "restoredMessage": { "message": "既定値に戻しました。保存を押して適用してください。" },
+  "savedMessage": { "message": "設定を保存しました" },
+  "openInNewTab": {
+    "message": "新しいタブで $PLATFORM$ を開く",
+    "placeholders": {
+      "platform": { "content": "$1", "example": "MyAnimeList" }
+    }
+  },
+
+  "confidenceHigh": { "message": "高信頼" },
+  "confidenceMedium": { "message": "要確認" },
+  "confidenceLow": { "message": "不正確の可能性" },
+
+  "drawerExpand": { "message": "AniBridge を展開" },
+  "drawerCollapse": { "message": "AniBridge を折りたたむ" },
+  "panelClose": { "message": "AniBridge を閉じる" },
+  "loadingCrossSite": { "message": "各サイトのデータを照合中" },
+  "loadingMatchingDatabase": { "message": "アニメデータベースと照合中" },
+  "loadingFetchingTitles": { "message": "繁体字中国語と日本語タイトルを取得中" },
+  "loadingAiAlias": { "message": "オンデバイス AI に別名を問い合わせ中" },
+  "queryIncomplete": { "message": "取得できませんでした" },
+  "queryFailed": { "message": "他サイトのデータを取得できません" },
+  "retryHint": { "message": "しばらく待ってからページを再読み込みしてください。" },
+  "unknownError": { "message": "不明なエラー" },
+  "panelMultiTitle": { "message": "多言語タイトル" },
+  "panelDatabaseLinks": { "message": "アニメデータベースへのリンク" },
+  "unknownWork": { "message": "不明な作品" },
+  "labelZhTw": { "message": "繁中" },
+  "labelJapanese": { "message": "日本語" },
+  "labelEnglish": { "message": "English" },
+  "labelRomaji": { "message": "Romaji" },
+  "officialWebsite": { "message": "公式サイト" },
+  "officialWebsiteWithLang": {
+    "message": "公式サイト · $LANG$",
+    "placeholders": {
+      "lang": { "content": "$1", "example": "Japanese" }
+    }
+  },
+  "officialInfoHeading": { "message": "作品公式情報" },
+  "trackingHeading": { "message": "視聴管理" },
+  "streamingHeading": { "message": "配信サービス検索" },
+  "streamingNotice": { "message": "検索結果は現在の配信状況の確認用です。実際の視聴はアカウント・地域・配信期間によって異なります。" },
+  "openPlatformSettings": { "message": "プラットフォーム設定を開く" },
+  "tryLocalAi": { "message": "オンデバイス AI で別名を試す" },
+  "localAiWorking": { "message": "オンデバイス AI で照合中…" },
+  "manualCorrect": { "message": "違う作品ですか？手動で修正" },
+  "animeTitle": { "message": "アニメタイトル" },
+  "firstAirYearPlaceholder": { "message": "放送年" },
+  "firstAirYearAria": { "message": "初回放送年" },
+  "research": { "message": "再検索" },
+  "seasonWarning": { "message": "同シリーズの季節・OVA・劇場版は名前が似ていることがあります。リストに追加する前に作品年と種別を確認してください。" },
+  "copyTitleTooltip": {
+    "message": "$LABEL$ タイトルをコピー",
+    "placeholders": {
+      "label": { "content": "$1", "example": "日本語" }
+    }
+  },
+  "copyTitleAria": {
+    "message": "$LABEL$ タイトルをコピー：$VALUE$",
+    "placeholders": {
+      "label": { "content": "$1", "example": "日本語" },
+      "value": { "content": "$2", "example": "作品名" }
+    }
+  },
+  "copied": { "message": "コピー済み" },
+  "linkExact": { "message": "作品ページ ↗" },
+  "linkSearch": { "message": "検索 ↗" },
+  "ratingsHeading": { "message": "評価・ランキング" },
+
+  "errorNoAnimeTitle": { "message": "アニメタイトルが見つかりません" },
+  "errorInvalidDatabaseId": { "message": "データベースの作品 ID が無効です" },
+  "errorNoCrossSiteData": { "message": "この作品の他サイト情報が見つかりません" },
+  "warningBangumiUnavailable": { "message": "Bangumi は一時的に利用できません" },
+  "warningAnilistUnavailable": { "message": "AniList は一時的に利用できません" },
+  "warningWithReason": {
+    "message": "$WARNING$：$REASON$",
+    "placeholders": {
+      "warning": { "content": "$1" },
+      "reason": { "content": "$2" }
+    }
+  },
+
+  "ratingAnilistDetail": {
+    "message": "リスト登録 $COUNT$ 人",
+    "placeholders": {
+      "count": { "content": "$1", "example": "12,345" }
+    }
+  },
+  "ratingBangumiDetail": {
+    "message": "$COUNT$ 件の評価",
+    "placeholders": {
+      "count": { "content": "$1", "example": "12,345" }
+    }
+  },
+  "ratingRankAllTime": { "message": " 歴代" },
+
+  "errorLocalAiUnavailable": { "message": "この Chrome ではオンデバイス AI モデルが利用できません" },
+  "errorLocalAiFormat": { "message": "オンデバイス AI が検証可能な別名フォーマットを返しませんでした" },
+  "errorLocalAiNoAlias": { "message": "オンデバイス AI から使える別名が得られませんでした" },
+  "errorLocalAiNoMatch": { "message": "オンデバイス AI が提案した別名は、どのデータベースにも一致しませんでした" },
+  "warningLocalAiAlias": {
+    "message": "オンデバイス AI の提案別名「$ALIAS$」がデータベースと一致しました。リストに追加する前に作品をご確認ください。",
+    "placeholders": {
+      "alias": { "content": "$1", "example": "某某別名" }
+    }
+  },
+  "warningLocalAiFailed": {
+    "message": "オンデバイス AI で照合できませんでした：$REASON$",
+    "placeholders": {
+      "reason": { "content": "$1" }
+    }
+  },
+
+  "regionGlobalEnglish": { "message": "グローバル / 英語" },
+  "regionZhJp": { "message": "中国語 / 日本作品" },
+  "regionGlobalMulti": { "message": "グローバル / 多言語" },
+  "regionJapanese": { "message": "日本語" },
+  "regionGlobalGeneral": { "message": "グローバル / 一般視聴者" },
+  "regionTaiwanZhTw": { "message": "台湾 / 繁体字中国語" },
+  "regionGlobalTaiwan": { "message": "グローバル / 台湾" },
+
+  "platformMalLabel": { "message": "MyAnimeList" },
+  "platformMalDescription": { "message": "視聴進捗・評価・レビュー・ランキング" },
+  "platformAnilistLabel": { "message": "AniList" },
+  "platformAnilistDescription": { "message": "視聴進捗・統計・評価・コミュニティ機能" },
+  "platformBangumiLabel": { "message": "Bangumi" },
+  "platformBangumiDescription": { "message": "コレクション・タグ・評価・中国語メタデータ" },
+  "platformKitsuLabel": { "message": "Kitsu" },
+  "platformKitsuDescription": { "message": "視聴進捗・評価・コミュニティ動向" },
+  "platformAnimeplanetLabel": { "message": "Anime-Planet" },
+  "platformAnimeplanetDescription": { "message": "コレクション・おすすめ・レビュー・ランキング" },
+  "platformAnidbLabel": { "message": "AniDB" },
+  "platformAnidbDescription": { "message": "詳細版本情報・MyList・評価・レビュー" },
+  "platformAnnictLabel": { "message": "Annict" },
+  "platformAnnictDescription": { "message": "日本アニメの視聴進捗と各エピソード記録" },
+  "platformSimklLabel": { "message": "Simkl" },
+  "platformSimklDescription": { "message": "アニメ・ドラマ・映画のクロスメディア管理" },
+  "platformLivechartLabel": { "message": "LiveChart" },
+  "platformLivechartDescription": { "message": "クール表・放送通知・視聴状況・コミュニティ評価" },
+  "platformFilmarksLabel": { "message": "Filmarks Anime" },
+  "platformFilmarksDescription": { "message": "日本ユーザーの五つ星評価・感想・満足度ランキング" },
+  "platformAnikoreLabel": { "message": "あにこれ (AniKore)" },
+  "platformAnikoreShortLabel": { "message": "あにこれ" },
+  "platformAnikoreDescription": { "message": "日本アニメのレビュー・成分評価・総合ランキング" },
+  "platformImdbLabel": { "message": "IMDb" },
+  "platformImdbDescription": { "message": "映像作品の一般視聴者による評価とレビュー。分割は MAL と異なる場合があります" },
+  "platformAnimegamerLabel": { "message": "巴哈姆特動畫瘋 (Ani-Gamer)" },
+  "platformAnimegamerDescription": { "message": "作品タイトルで巴哈姆特動畫瘋を検索し、現在の配信状況を確認" },
+  "platformNetflixLabel": { "message": "Netflix" },
+  "platformNetflixDescription": { "message": "作品タイトルで Netflix を検索。結果はアカウントと地域に依存します" },
+  "platformHamivideoLabel": { "message": "Hami Video" },
+  "platformHamivideoDescription": { "message": "作品タイトルで Hami Video を検索し、現在の配信状況を確認" }
+}
