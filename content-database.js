@@ -2,7 +2,7 @@
   "use strict";
 
   const { renderAnime, renderError, renderLoading } = AniBridgeUi;
-  const t = (AniBridgeI18n || { t: (key) => key }).t;
+  const t = (typeof AniBridgeI18n !== "undefined" ? AniBridgeI18n : { t: (key) => key }).t;
   let currentKey = "";
   let currentData = null;
 

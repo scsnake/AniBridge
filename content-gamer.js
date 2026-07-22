@@ -2,7 +2,7 @@
   "use strict";
 
   const { renderAnime, renderError, renderLoading } = AniBridgeUi;
-  const t = (AniBridgeI18n || { t: (key) => key }).t;
+  const t = (typeof AniBridgeI18n !== "undefined" ? AniBridgeI18n : { t: (key) => key }).t;
   const metadata = extractMetadata();
   let currentData = null;
   if (!metadata.title) return;
