@@ -1,6 +1,6 @@
 {
   "name": "anime-db-bridge",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "private": true,
   "description": "Chrome extension connecting Bahamut Anime titles to anime database entries.",
   "scripts": {
